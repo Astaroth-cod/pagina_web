@@ -1,0 +1,125 @@
+/* --- ESTILOS BASE Y RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+h2 { margin-bottom: 15px; }
+section { margin-bottom: 50px; }
+
+.caja {
+    background: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* --- FLEXBOX: CONTENEDOR BÁSICO (PASO 1 Y 2) --- */
+.contenedor {
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* Fila horizontal */
+    background: #ecf0f1;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* --- FLEXBOX: NAVBAR (PASO 3) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo a un lado, links al otro */
+    align-items: center;
+    background: #2c3e50;
+    padding: 15px 20px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* --- FLEXBOX: CENTRADO PERFECTO (PASO 4) --- */
+.centrado-perfecto {
+    display: flex;
+    justify-content: center; /* Horizontal */
+    align-items: center;     /* Vertical */
+    height: 200px;
+    background: #ecf0f1;
+    border: 2px dashed #bdc3c7;
+}
+
+/* --- GRID: GALERÍA RESPONSIVA (PASO 9) --- */
+.galeria {
+    display: grid;
+    /* No requiere media queries para ser responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.item {
+    background: #2ecc71;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* --- PROYECTO FINAL: GRID + FLEXBOX (PASO 11) --- */
+.sitio {
+    display: grid;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 80vh;
+    border: 3px solid #333;
+}
+
+.site-header  { grid-area: header; display: flex; justify-content: space-between; align-items: center; background: #2c3e50; color: white; padding: 15px; }
+.site-sidebar { grid-area: sidebar; background: #34495e; color: white; padding: 20px; }
+.site-main    { grid-area: main; padding: 25px; background: white; }
+.site-footer  { grid-area: footer; display: flex; justify-content: center; background: #2c3e50; color: #95a5a6; padding: 15px; }
+
+.menu { display: flex; gap: 15px; }
+.menu a { color: white; text-decoration: none; }
+
+.site-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Lista vertical con Flexbox */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap; /* Salto de línea para tarjetas */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.post {
+    flex: 1 1 150px;
+    background: #3498db;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
